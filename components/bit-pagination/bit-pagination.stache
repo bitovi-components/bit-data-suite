@@ -1,1 +1,7 @@
-<fp-list items="{pages}"></fp-list>
+<div class="pagination-items">
+    {{#pages}}
+    <button type="button"
+        class="pagination-item {{#is page .}}active{{/is}}" 
+        can-click="updatePage">{{.}}</button>
+    {{/pages}}
+</div>

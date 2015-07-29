@@ -68,8 +68,7 @@ can.Component.extend({
 		 * @param {string} keyName The key name of the object that changed.
 		 * @param {can.Map} searchQuery The search query object.
          */
-        '{viewModel} searchQuery': function(ctx, keyName, searchQuery) {
-			console.log(searchQuery);
+        '{searchQuery} change': function(ctx, keyName, searchQuery) {
 			if (searchQuery && !can.isEmptyObject(searchQuery)) {
 				this.viewModel.doSearch();
 			}

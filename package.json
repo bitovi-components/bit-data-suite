@@ -23,9 +23,9 @@
       "steal-qunit",
       "steal-tools"
     ],
-	"directories": {
-		"lib": "components"
-	},
+    "directories": {
+      "lib": "components"
+    },
     "transpiler": "babel"
   },
   "keywords": [
@@ -41,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/bitovi-components/bit-grid/issues"
   },
-  "homepage": "https://github.com/bitovi-components/bit-grid"
+  "homepage": "https://github.com/bitovi-components/bit-grid",
+  "dependencies": {
+    "lodash": "^3.10.0"
+  }
 }

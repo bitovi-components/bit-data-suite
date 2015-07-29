@@ -1,11 +1,18 @@
 import can from 'can';
 
-import template from './bit-grid.stache!';
+import template from './bit-pagination.stache!';
 import ViewModel from './viewmodel';
-import './bit-grid.less!';
+import './bit-pagination.less!';
 
 export default can.Component.extend({
     tag: 'bit-pagination',
     template: template,
-    scope: ViewModel
+    scope: ViewModel,
+    events: {
+        '{viewModel} page': function (vm, key, page) {
+            var limit = vm.attr('limit');
+            //update the offset
+            vm.attr('offset', (page * limit)-limit);
+        }
+    }
 });
