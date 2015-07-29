@@ -1,7 +1,7 @@
 {
-  "name": "bit-grid",
+  "name": "bit-data-suite",
   "version": "0.0.1",
-  "description": "Web component collection for grid, table, and list with pagination.",
+  "description": "A suite of components that load, search, render, and filter grid style data.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -39,9 +39,9 @@
   "author": "Bitovi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bitovi-components/bit-grid/issues"
+    "url": "https://github.com/bitovi-components/bit-data-suite/issues"
   },
-  "homepage": "https://github.com/bitovi-components/bit-grid",
+  "homepage": "https://github.com/bitovi-components/bit-data-suite",
   "dependencies": {
     "lodash": "^3.10.0"
   }
