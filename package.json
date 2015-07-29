@@ -1,0 +1,45 @@
+{
+  "name": "bit-grid",
+  "version": "0.0.1",
+  "description": "Web component collection for grid, table, and list with pagination.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitovi-components/bit-grid"
+  },
+  "devDependencies": {
+    "jquery": ">1.9.0",
+    "steal": "^0.10.5",
+    "steal-qunit": "0.0.4",
+    "steal-tools": "^0.11.0-pre.2",
+    "testee": "^0.2.0",
+    "can": "^2.3.0-pre.2"
+  },
+  "system": {
+    "npmIgnore": [
+      "testee",
+      "steal-qunit",
+      "steal-tools"
+    ],
+	"directories": {
+		"lib": "components"
+	},
+    "transpiler": "babel"
+  },
+  "keywords": [
+    "canjs",
+    "webcomponent",
+    "grid",
+    "table",
+    "list",
+    "pagination"
+  ],
+  "author": "Bitovi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitovi-components/bit-grid/issues"
+  },
+  "homepage": "https://github.com/bitovi-components/bit-grid"
+}

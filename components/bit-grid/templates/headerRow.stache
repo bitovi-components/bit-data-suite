@@ -1,0 +1,5 @@
+<div class="grid-row grid-header-row {{_classes}}">
+    {{#columns}}
+    <div class="grid-cell">{{getColumn}}</div>
+    {{/columns}}
+</div>

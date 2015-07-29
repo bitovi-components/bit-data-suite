@@ -1,0 +1,10 @@
+{
+    "sites": {
+        "pages": {
+            "glob": "_pages/*.md",
+            "parent": "index",
+            "dest" : ".",
+            "pageConfig": {"page":"index"}
+        }
+    }
+}

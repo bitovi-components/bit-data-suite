@@ -1,0 +1,16 @@
+<div class="grid {{#isDataEmpty}}grid-empty{{/isDataEmpty}}">
+    <header class="grid-header">
+        {{#headerRows}}
+            {{> headerRowTemplate}}
+        {{/headerRows}}
+    </header>
+    <div class="grid-body">
+        {{#data}}
+        {{> rowTemplate}}
+        {{/data}}
+        {{^data}}
+        <div class="grid-row">No Results</div>
+        {{/data}}
+    </div>
+    <footer class="grid-footer"></footer>
+</div>

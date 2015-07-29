@@ -1,0 +1,15 @@
+<table class="table table-striped">
+    <thead>
+        {{#headerRows}}
+            {{> headerRowTemplate}}
+        {{/headerRows}}
+    </thead>
+    <tbody>
+        {{#data}}
+        {{> rowTemplate}}
+        {{/data}}
+        {{^data}}
+        <tr><td>No Results</td></tr>
+        {{/data}}
+    </tbody>
+</table>

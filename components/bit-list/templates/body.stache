@@ -1,0 +1,8 @@
+<ul class="list-group">
+    {{#data}}
+    {{> rowTemplate}}
+    {{/data}}
+    {{^data}}
+    <li class="list-group-item list-group-item-danger">No results.</li>
+    {{/data}}
+</ul>

@@ -1,0 +1,7 @@
+<div class="grid-row">
+    {{columns.length}}
+    {{#columns}}
+        {{getColumn}}
+        {{> cellTemplate}}
+    {{/columns}}
+</div>

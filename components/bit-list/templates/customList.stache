@@ -1,0 +1,14 @@
+{{#unordered}}
+<ul>
+    {{#each items}}
+        {{renderItem}}
+    {{/each}}
+</ul>
+{{/unordered}}
+{{^unordered}}
+<ol>
+    {{#each items}}
+        {{renderItem}}
+    {{/each}}
+</ol>
+{{/unordered}}

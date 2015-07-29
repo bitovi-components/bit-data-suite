@@ -1,0 +1,5 @@
+<tr>
+    {{#columns}}
+    <th class="grid-cell">{{getColumn}}</th>
+    {{/columns}}
+</tr>

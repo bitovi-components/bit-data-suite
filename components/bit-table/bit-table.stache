@@ -1,0 +1,2 @@
+<bit-grid data="{data}"
+    columns="{columns}"></bit-grid>
