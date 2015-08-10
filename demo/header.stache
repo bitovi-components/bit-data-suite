@@ -1,0 +1,14 @@
+<tr>
+    {{#columns}}
+    <th class="grid-cell">{{getColumn}}
+        <bit-sortable sort-bucket="{query.sort}" sort-key="{{key}}"></bit-sortable>
+    </th>
+    {{/columns}}
+</tr>
+<tr class="column-filter">
+    {{#columns}}
+    <th class="grid-cell">
+        <input type="text" class="form-control" can-value="query.{{key}}" placeholder="Search {{getColumn}}">
+    </th>
+    {{/columns}}
+</tr>

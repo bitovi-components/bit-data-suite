@@ -1,0 +1,11 @@
+<span class="grid-item">
+    {{#is key 'github'}}
+        <a href="http://github.com/{{getValue}}">{{getValue}}</a>
+    {{/is}}
+    {{#is key 'twitter'}}
+        <a href="http://twitter.com/{{getValue}}">{{getValue}}</a>
+    {{/is}}
+    {{#is key 'name'}}
+        {{getValue}}
+    {{/is}}
+</span>
