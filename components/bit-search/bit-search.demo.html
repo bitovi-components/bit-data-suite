@@ -1,72 +1,84 @@
-<!-- Template to load -->
-<script type="text/stache" id="demo" can-autorender>
-<can-import from="./bit-search"/><bit-search
-  model="{Search}"
-  results="{results}"
-  search-query="{searchQuery}">
-</bit-search>
-<p>Query State: {{#if results.isPending}}Loading...{{else}}Ready{{/if}}</p>
-<input type="test" can-input="updateQuery" can-value="searchQuery.label">
-<ul>
-  {{#results}}
-    <li>{{label}}</li>
-  {{/results}}
-</ul>
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>bit-grid Demo</title>
+	<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		#app {
+			width: 600px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo" class="container">
+        <!-- Template to load -->
+        <script type="text/stache" id="demo_template" can-autorender>
+        <can-import from="components/bit-search/"/><bit-search
+          model="{Search}"
+          results="{results}"
+          search-query="{searchQuery}">
+        </bit-search>
+        <p>Query State: {{#if results.isPending}}Loading...{{else}}Ready{{/if}}</p>
+        <input type="text" can-value="searchQuery.label">
+        <ul>
+          {{#results}}
+            <li>{{label}}</li>
+          {{/results}}
+        </ul>
+        </script>
 
-<!-- Loading Script -->
-<script src="./node_modules/steal/steal.js" id="demo_source" main="can/view/autorender/">
-import $ from "jquery";
-import can from "can";
-import "can/util/fixture/";
+        <!-- Loading Script -->
+        <script src="../../node_modules/steal/steal.js" id="demo_source" main="can/view/autorender/">
 
-// Fixture data
-var fruits = [
-  { label: "Granny Smith Apple"},
-  { label: "McIntosh Apple"},
-  { label: "Fuji Apple"},
-  { label: "Red Delicious Apple"},
-  { label: "Pink Lady Apple"},
-  { label: "Golden Delcicious Apple"},
-  { label: "Gala Apple"},
-  { label: "Strawberry"},
-  { label: "Orange"},
-  { label: "Plum"},
-  { label: "Blueberry"},
-  { label: "Pear"},
-  { label: "Peach"},
-  { label: "Tomato"},
-  { label: "Fig"},
-  { label: "Watermelon"},
-  { label: "Melon"},
-  { label: "Sprite Melon"},
-  { label: "Lemon"}
-];
+		steal('can', 'can/map/define','can/util/fixture/', function(can){
 
-// Fixture
-can.fixture('GET /test', function(req) {
-  var filtered = fruits.filter(function(item) {
-      //"begins with" search
-    return item.label.toLowerCase().indexOf(req.data.label.toLowerCase()) > -1;
-  });
-  return filtered;
-});
+            // Fixture data
+            var fruits = [
+              { label: "Granny Smith Apple"},
+              { label: "McIntosh Apple"},
+              { label: "Fuji Apple"},
+              { label: "Red Delicious Apple"},
+              { label: "Pink Lady Apple"},
+              { label: "Golden Delcicious Apple"},
+              { label: "Gala Apple"},
+              { label: "Strawberry"},
+              { label: "Orange"},
+              { label: "Plum"},
+              { label: "Blueberry"},
+              { label: "Pear"},
+              { label: "Peach"},
+              { label: "Tomato"},
+              { label: "Fig"},
+              { label: "Watermelon"},
+              { label: "Melon"},
+              { label: "Sprite Melon"},
+              { label: "Lemon"}
+            ];
 
-//Search model
-var Search = can.Model.extend({
-  findAll: "GET /test"
-},{});
+            // Fixture
+            can.fixture('GET /test', function(req) {
+                return fruits.filter(function(item) {
+                    //"begins with" search
+                    return item.label.toLowerCase().indexOf(req.data.label.toLowerCase()) > -1;
+                });
+            });
 
-$("#demo").viewModel().attr({
-  Search: Search,
-  results: [],
-  searchQuery: {label: 'apple'},
-  updateQuery: function (ctx, $el) {
-      this.attr('searchQuery',{ label: $el.val()});
-  }
-});
-</script>
-<script>
-  //window.DEMO_HTML = document.getElementById("demo").innerHTML.replace('<can-import from="bit-search"/>', '');
-  //window.DEMO_SOURCE = document.getElementById("demo_source").innerHTML;
-</script>
+            //Search model
+            var Search = can.Model.extend({
+              findAll: "GET /test"
+            },{});
+			can.$('#demo_template').viewModel({
+              Search: Search,
+              results: [],
+              searchQuery: {label: 'apple'}
+			});
+		});
+        </script>
+        <script>
+          //window.DEMO_HTML = document.getElementById("demo").innerHTML.replace('<can-import from="bit-search"/>', '');
+          //window.DEMO_SOURCE = document.getElementById("demo_source").innerHTML;
+        </script>
+</body>
+</html>

@@ -59,8 +59,6 @@ export default can.Map.extend({
         return ctx.attr('label');
     },
     getValue: function (ctx, tree) {
-        console.log(ctx);
-        console.log(tree);
         return tree._parent._context.attr(ctx.attr('key'));
     }
 });

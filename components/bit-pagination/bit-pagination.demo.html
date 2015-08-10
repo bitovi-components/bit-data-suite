@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>bit-grid Demo</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<style>
 		#app {
 			width: 600px;
@@ -13,19 +13,41 @@
 </head>
 <body>
 	<div id="demo" class="container">
-		<script src="../../node_modules/steal/steal.js" id="demo_source" main="can/view/autorender/"></script>
-		<script type="text/stache" id="demo_template" can-autorender>
-		<can-import from="components/bit-pagination/" />
-		<bit-pagination count="100" offset="{offset}"></bit-pagination>
-		Offset: {{offset}}
-		</script>
+			<script src="../../node_modules/steal/steal.js" id="demo_source" main="can/view/autorender/"></script>
+			<script type="text/stache" id="demo_template" can-autorender>
+			<can-import from="components/bit-pagination/" />
+			<div class="row">
+				<div class="col-md-4">
+					<label class="control-label">Item Count:</label>
+					<input type="text" can-value="{count}" class="form-control">
+				</div>
+				<div class="col-md-4">
+					<label class="control-label">Page Limit:</label>
+					<input type="text" can-value="{limit}" class="form-control">
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<strong>Pagination...</strong>
+				<bit-pagination limit="{limit}" page="{page}" count="{count}" offset="{offset}"></bit-pagination>
+			</div>
+			<hr>
+			<div class="row">
+				Offset: {{offset}}
+				Page: {{page}}
+			</div>
+			</script>
+		</div>
 	</div>
 
 	<script type='text/javascript'>
 		steal('can', 'can/map/define', function(can){
 
 			can.$('#demo_template').viewModel({
-				offset: 0
+				offset: 0,
+				count: 100,
+				page:1,
+				limit: 25
 			});
 		});
 	</script>

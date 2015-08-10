@@ -1,0 +1,12 @@
+{{#is direction 'desc'}}
+<button class="sort-button sort-ascending">
+    <span class="sort-icon"></span>
+    <span class="sr-only">Ascending</span>
+</button>
+{{/is}}
+{{#is direction 'asc'}}
+<button class="sort-button sort-descending">
+    <span class="sort-icon"></span>
+    <span class="sr-only">Descending</span>
+</button>
+{{/is}}
