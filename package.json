@@ -43,6 +43,6 @@
   },
   "homepage": "https://github.com/bitovi-components/bit-data-suite",
   "dependencies": {
-    "lodash": "^3.10.0"
+    "lodash": "^4.17.19"
   }
 }
